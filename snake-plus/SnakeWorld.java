@@ -9,9 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class SnakeWorld extends World
 {
 
-    private static final int CELL_SIZE = 20;
-    private static final int WORLD_WIDTH = 30;
-    private static final int WORLD_HEIGHT = 20;
+    private static final int CELL_SIZE = 40;
+    private static final int WORLD_WIDTH = 15;
+    private static final int WORLD_HEIGHT = 10;
     public SnakeWorld()
     {    
         super(WORLD_WIDTH, WORLD_HEIGHT, CELL_SIZE); // 600x400 px, 20 px cell
@@ -40,5 +40,18 @@ public class SnakeWorld extends World
      */
     private void prepare()
     {
+
+        Serpiente serpiente = new Serpiente();
+        addObject(serpiente,3,4);
+        Manzana manzana = new Manzana();
+        addObject(manzana,7,1);
+        Manzana manzana2 = new Manzana();
+        addObject(manzana2,11,6);
+        Manzana manzana3 = new Manzana();
+        addObject(manzana3,7,7);
+        Manzana manzana4 = new Manzana();
+        addObject(manzana4,9,3);
+        Manzana manzana5 = new Manzana();
+        addObject(manzana5,9,5);
     }
 }
