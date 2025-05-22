@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Capture Grid - Snake Dash</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 0;
+            height: 600px;
+        }
+        
+        .quadrant {
+            padding: 25px;
+            border: 2px solid #ecf0f1;
+            position: relative;
+            overflow-y: auto;
+        }
+        
+        .quadrant h2 {
+            margin: 0 0 20px 0;
+            font-size: 1.4em;
+            font-weight: 600;
+            padding-bottom: 10px;
+            border-bottom: 3px solid;
+        }
+        
+        .likes {
+            background: #e8f5e8;
+            border-color: #27ae60;
+        }
+        
+        .likes h2 {
+            color: #27ae60;
+            border-color: #27ae60;
+        }
+        
+        .questions {
+            background: #fff3e0;
+            border-color: #f39c12;
+        }
+        
+        .questions h2 {
+            color: #f39c12;
+            border-color: #f39c12;
+        }
+        
+        .ideas {
+            background: #e3f2fd;
+            border-color: #3498db;
+        }
+        
+        .ideas h2 {
+            color: #3498db;
+            border-color: #3498db;
+        }
+        
+        .concerns {
+            background: #ffebee;
+            border-color: #e74c3c;
+        }
+        
+        .concerns h2 {
+            color: #e74c3c;
+            border-color: #e74c3c;
+        }
+        
+        .feedback-item {
+            background: white;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+        }
+        
+        .likes .feedback-item {
+            border-left-color: #27ae60;
+        }
+        
+        .questions .feedback-item {
+            border-left-color: #f39c12;
+        }
+        
+        .ideas .feedback-item {
+            border-left-color: #3498db;
+        }
+        
+        .concerns .feedback-item {
+            border-left-color: #e74c3c;
+        }
+        
+        .user-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .user-role {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        
+        .feedback-text {
+            color: #34495e;
+            line-height: 1.4;
+        }
+        
+        .icon {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐍 Feedback Capture Grid - Snake Dash</h1>
+            <p>Retroalimentación de usuarios sobre la experiencia de juego</p>
+        </div>
+        
+        <div class="grid-container">
+            <!-- LIKES -->
+            <div class="quadrant likes">
+                <h2><span class="icon">😊</span>Lo que les gustó</h2>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Julio Guzmán</div>
+                    <div class="user-role">Estudiante de Ingeniería en Ciencia de Datos</div>
+                    <div class="feedback-text">Me encanta que mantenga la simplicidad del Snake original pero con elementos estratégicos. Los power-ups añaden una capa táctica interesante.</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Diego López</div>
+                    <div class="user-role">Estudiante de Diseño Interactivo</div>
+                    <div class="feedback-text">El diseño visual es muy atractivo y moderno. La interfaz es intuitiva y los colores crean una buena experiencia visual sin ser abrumadores.</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Alfredo López</div>
+                    <div class="user-role">Estudiante de Secundaria</div>
+                    <div class="feedback-text">Es súper adictivo y fácil de entender. Me gusta que pueda competir con mis amigos y ver quién tiene el mejor puntaje.</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Willy Zamora</div>
+                    <div class="user-role">Padre de Familia</div>
+                    <div class="feedback-text">Perfecto para relajarse en los descansos. Es entretenido sin ser complicado, ideal para cualquier edad.</div>
+                </div>
+            </div>
+            
+            <!-- QUESTIONS -->
+            <div class="quadrant questions">
+                <h2><span class="icon">❓</span>Preguntas</h2>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Carlos Alfonso</div>
+                    <div class="user-role">Docente de Lógica y Programación</div>
+                    <div class="feedback-text">¿Hay planes de implementar diferentes niveles de dificultad progresiva? ¿Cómo se podría usar educativamente?</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Esteban Ramírez</div>
+                    <div class="user-role">Game Developer</div>
+                    <div class="feedback-text">¿Cuál es el plan de monetización? ¿Consideraron implementar un sistema de logros o achievements?</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Diego López</div>
+                    <div class="user-role">Estudiante de Diseño Interactivo</div>
+                    <div class="feedback-text">¿Habrá opciones de personalización para la serpiente? ¿Diferentes temas visuales?</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Julio Guzmán</div>
+                    <div class="user-role">Estudiante de Ingeniería en Ciencia de Datos</div>
+                    <div class="feedback-text">¿Se guardan estadísticas detalladas del jugador? ¿Hay análisis de patrones de juego?</div>
+                </div>
+            </div>
+            
+            <!-- IDEAS -->
+            <div class="quadrant ideas">
+                <h2><span class="icon">💡</span>Ideas para mejorar</h2>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Esteban Ramírez</div>
+                    <div class="user-role">Game Developer</div>
+                    <div class="feedback-text">Implementar un modo multijugador en tiempo real y torneos semanales. También agregar efectos de sonido más dinámicos.</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Alfredo López</div>
+                    <div class="user-role">Estudiante de Secundaria</div>
+                    <div class="feedback-text">Que tenga skins para la serpiente y mapas temáticos. También notificaciones para retar a amigos.</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Carlos Alfonso</div>
+                    <div class="user-role">Docente de Lógica y Programación</div>
+                    <div class="feedback-text">Crear un modo educativo con problemas matemáticos o lógicos. Integrar conceptos de programación básica.</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Willy Zamora</div>
+                    <div class="user-role">Padre de Familia</div>
+                    <div class="feedback-text">Un modo pausable sería genial para interrupciones. También control parental para tiempo de juego.</div>
+                </div>
+            </div>
+            
+            <!-- CONCERNS -->
+            <div class="quadrant concerns">
+                <h2><span class="icon">⚠️</span>Preocupaciones</h2>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Willy Zamora</div>
+                    <div class="user-role">Padre de Familia</div>
+                    <div class="feedback-text">Me preocupa que sea demasiado adictivo para los jóvenes. ¿Hay límites de tiempo de juego?</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Carlos Alfonso</div>
+                    <div class="user-role">Docente de Lógica y Programación</div>
+                    <div class="feedback-text">La curva de dificultad podría ser muy empinada para principiantes. Necesita más gradualidad.</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Esteban Ramírez</div>
+                    <div class="user-role">Game Developer</div>
+                    <div class="feedback-text">El rendimiento en dispositivos más antiguos podría ser un problema. La optimización será clave.</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Julio Guzmán</div>
+                    <div class="user-role">Estudiante de Ingeniería en Ciencia de Datos</div>
+                    <div class="feedback-text">Sin elementos estratégicos suficientes, podría volverse repetitivo rápidamente para jugadores experimentados.</div>
+                </div>
+                
+                <div class="feedback-item">
+                    <div class="user-name">Diego López</div>
+                    <div class="user-role">Estudiante de Diseño Interactivo</div>
+                    <div class="feedback-text">Falta feedback visual cuando se cometen errores. Los usuarios podrían frustrarse sin entender qué pasó.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
