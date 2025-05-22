@@ -67,7 +67,9 @@ public class Serpiente extends Actor
             getY() <= 0 || getY() >= getWorld().getHeight() - 1) {
             Greenfoot.stop();
         }
-
+        if (getOneObjectAtOffset(0, 0, Barril.class) != null) {
+            Greenfoot.stop(); // Game over
+        }
         // Check self-collision
         for (Piel segment : tailSegments) {
             if (this.getX() == segment.getX() && this.getY() == segment.getY()) {
@@ -80,6 +82,7 @@ public class Serpiente extends Actor
         if (apple != null) {
             getWorld().removeObject(apple);
             grow();
+            ((SnakeWorld)getWorld()).appleEaten();
         }
     }
     private void grow() {

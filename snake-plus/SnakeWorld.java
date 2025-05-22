@@ -12,6 +12,7 @@ public class SnakeWorld extends World
     private static final int CELL_SIZE = 40;
     private static final int WORLD_WIDTH = 15;
     private static final int WORLD_HEIGHT = 10;
+    private int applesEaten = 0;
     public SnakeWorld()
     {    
         super(WORLD_WIDTH, WORLD_HEIGHT, CELL_SIZE); // 600x400 px, 20 px cell
@@ -33,6 +34,19 @@ public class SnakeWorld extends World
             bg.drawLine(0, y, getWidth() * getCellSize(), y);
         }
     }
+    public void appleEaten() {
+        applesEaten++;
+
+        if (applesEaten % 3 == 0) {
+            spawnEnemy();
+        }
+    }
+
+    private void spawnEnemy() {
+        int x = Greenfoot.getRandomNumber(getWidth());
+        int y = Greenfoot.getRandomNumber(getHeight());
+        addObject(new Enemigo(), x, y);
+    }
     
     /**
      * Prepare the world for the start of the program.
@@ -53,5 +67,15 @@ public class SnakeWorld extends World
         addObject(manzana4,9,3);
         Manzana manzana5 = new Manzana();
         addObject(manzana5,9,5);
+        Manzana manzana6 = new Manzana();
+        addObject(manzana6,3,9);
+        Manzana manzana7 = new Manzana();
+        addObject(manzana7,5,4);
+        Manzana manzana8 = new Manzana();
+        addObject(manzana8,11,1);
+        Barril barril = new Barril();
+        addObject(barril,9,8);
+        Barril barril2 = new Barril();
+        addObject(barril2,7,2);
     }
 }
