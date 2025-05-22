@@ -12,11 +12,14 @@ public class SnakeWorld extends World
     private static final int CELL_SIZE = 40;
     private static final int WORLD_WIDTH = 15;
     private static final int WORLD_HEIGHT = 10;
+    private ScoreBox scoreBox;
     private int applesEaten = 0;
+    
     public SnakeWorld()
     {    
         super(WORLD_WIDTH, WORLD_HEIGHT, CELL_SIZE); // 600x400 px, 20 px cell
-
+        scoreBox = new ScoreBox();
+        addObject(scoreBox, getWidth() / 2, -3);
         setBackground("desierto.jpg");
         drawGrid();
         prepare();
@@ -36,7 +39,11 @@ public class SnakeWorld extends World
     }
     public void appleEaten() {
         applesEaten++;
-
+        
+        if (scoreBox != null) {
+            scoreBox.setScore(applesEaten);
+        }
+        
         if (applesEaten % 3 == 0) {
             spawnEnemy();
         }
