@@ -8,14 +8,27 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Piel extends Actor
 {
-    /**
-     * Act - do whatever the Piel wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int random = Greenfoot.getRandomNumber(3);
+    
     public Piel()
     {
+        setRandomImage();
         GreenfootImage image = getImage();
         image.scale(40, 40); // scale to cell size
         setImage(image);  
+    }
+    private void setRandomImage() {
+        int choice = Greenfoot.getRandomNumber(3); // 0 to 3 → 4 options
+        switch (choice) {
+            case 0:
+                setImage("cuerpo_gusano_2.jpg");
+                break;
+            case 1:
+                setImage("franco.jpeg");
+                break;
+            case 2:
+                setImage("altan.png");
+                break;
+        }
     }
 }

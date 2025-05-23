@@ -83,6 +83,7 @@ public class Serpiente extends Actor
             getWorld().removeObject(apple);
             grow();
             ((SnakeWorld)getWorld()).appleEaten();
+            ((SnakeWorld)getWorld()).spawnApple();
         }
     }
     private void grow() {

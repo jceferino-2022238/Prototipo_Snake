@@ -14,7 +14,9 @@ public class Enemigo extends Actor
     private int moveCounter = 0;
 
     public Enemigo() {
-
+        GreenfootImage image = getImage();
+        image.scale(40, 40); // scale to cell size
+        setImage(image);  
         // Randomize direction: horizontal or vertical
         if (Greenfoot.getRandomNumber(2) == 0) {
             dx = Greenfoot.getRandomNumber(2) == 0 ? 1 : -1;

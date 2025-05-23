@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -22,6 +22,7 @@ public class SnakeWorld extends World
         addObject(scoreBox, getWidth() / 2, -3);
         setBackground("desierto.jpg");
         drawGrid();
+        spawnApple();
         prepare();
     }
 
@@ -53,12 +54,25 @@ public class SnakeWorld extends World
         int x = Greenfoot.getRandomNumber(getWidth());
         int y = Greenfoot.getRandomNumber(getHeight());
         addObject(new Enemigo(), x, y);
+        Greenfoot.playSound("aparecer.wav"); // Y
     }
     
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
+    public void spawnApple() {
+        int x, y;
+    
+        do {
+            x = Greenfoot.getRandomNumber(getWidth());
+            y = Greenfoot.getRandomNumber(getHeight());
+        } while (!isCellFree(x, y)); // Try again if spot is taken
+    
+        addObject(new Manzana(), x, y);
+    }
+    
+    private boolean isCellFree(int x, int y) {
+        List<Actor> objects = getObjectsAt(x, y, null);
+        return objects.isEmpty(); // No actor in that cell
+    }
+    
     private void prepare()
     {
 
@@ -84,5 +98,14 @@ public class SnakeWorld extends World
         addObject(barril,9,8);
         Barril barril2 = new Barril();
         addObject(barril2,7,2);
+        removeObject(manzana6);
+        removeObject(manzana3);
+        removeObject(manzana7);
+        removeObject(manzana5);
+        removeObject(manzana2);
+        removeObject(manzana4);
+        removeObject(manzana8);
+        manzana.setLocation(7,1);
+        removeObject(manzana);
     }
 }
