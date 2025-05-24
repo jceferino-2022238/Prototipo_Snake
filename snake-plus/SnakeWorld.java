@@ -61,8 +61,8 @@ public class SnakeWorld extends World
         int x, y;
     
         do {
-            x = Greenfoot.getRandomNumber(getWidth());
-            y = Greenfoot.getRandomNumber(getHeight());
+            x = Greenfoot.getRandomNumber(getWidth() - 2) + 1;  // Avoid x=0 and x=width-1
+            y = Greenfoot.getRandomNumber(getHeight() - 2) + 1; // Avoid y=0 and y=height-1
         } while (!isCellFree(x, y)); // Try again if spot is taken
     
         addObject(new Manzana(), x, y);
